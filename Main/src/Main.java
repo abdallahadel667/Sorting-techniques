@@ -1,5 +1,9 @@
 import java.util.*;
 import java.io.*;
+import CountingSort.CountingSort;
+import InsertionSort.SimpleSort;
+import Efficient.EfficientSort;
+import CountingSort.CountingSort;
 // nnnnnnnnnnnnnn
 public class Main {
 
@@ -42,6 +46,10 @@ public class Main {
     }
 
     public static void sortArray(ArrayList<Integer> array) {
+        CountingSort countingSort = new CountingSort(array);
+        SimpleSort simpleSort = new SimpleSort();
+        EfficientSort efficientSort = new EfficientSort();
+        
         Scanner sc = new Scanner(System.in);
         int choiceFormate = ReturnFormate();
         System.out.println("Pleae select the sorting algorithm you want to use");
