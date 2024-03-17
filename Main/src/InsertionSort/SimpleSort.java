@@ -59,8 +59,13 @@ public class SimpleSort {
 
     public ArrayList<Integer> insertionSort(ArrayList<Integer> list) {
         sort(list);
-        
         return list;
+    }
+
+    public void printSnapshots(ArrayList<ArrayList<Integer>> snapshots) {
+        for (ArrayList<Integer> snapshot : snapshots) {
+            System.out.println(snapshot);
+        }
     }
 
     
