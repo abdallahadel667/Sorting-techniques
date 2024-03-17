@@ -36,12 +36,18 @@ public class Main {
             System.out.println(" Please select the type of output you want:");
             System.out.println("1. Return the sorted array only");
             System.out.println("2. Return the intermediate steps of the sorting algorithm");
+            System.out.println("3. Exit");
             int choiceFormate = sc.nextInt();
 
             if (choiceFormate == 1) {
                 System.out.println("You have selected to return the sorted array only");
             } else if (choiceFormate == 2) {
                 System.out.println("You have selected to return the intermediate steps of the sorting algorithm");
+            }
+
+            else if (choiceFormate == 3) {
+                System.out.println("Exiting the program");
+                System.exit(0);
             } else {
                 System.out.println("Invalid choice");
                 continue;
