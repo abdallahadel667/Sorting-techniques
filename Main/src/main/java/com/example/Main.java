@@ -1,13 +1,10 @@
 package com.example;
-
+import  com.example.CountingSort.CountingSort;
+import  com.example.Efficient.EfficientSort;
+import  com.example.InsertionSort.SimpleSort;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.example.CountingSort.CountingSort;
-import com.example.Efficient.EfficientSort;
-import com.example.InsertionSort.SimpleSort;
-
 
 public class Main {
 
@@ -26,7 +23,7 @@ public class Main {
                 System.out.println("................................");
                 System.out.println("Please provide the path of the file containing the array to be sorted: ");
                 filePath = sc.nextLine();
-                main.java.com.example.ReadFile rf2 = new main.java.com.example.ReadFile(filePath);
+                ReadFile rf2 = new ReadFile(filePath);
                 try {
                     // read line from txt file
                     array = rf2.read();
@@ -36,7 +33,7 @@ public class Main {
                     continue;
                 }
             }
-        
+
             System.out.println("The array to be sorted is: " + array);
             sortArrayMenu(array);
             System.out.println("Do you want to try another sorting algorithm with different array?");
@@ -50,9 +47,6 @@ public class Main {
                 System.exit(0);
             }
         }
-        
-
-        
 
     }
 
@@ -83,7 +77,7 @@ public class Main {
 
                     System.out.println("The intermediate steps of the sorting algorithm are: ");
                     System.out.println(insertionSort.sort(array));
-                  
+
                 } else {
                     System.out.println("Invalid choice");
                 }
