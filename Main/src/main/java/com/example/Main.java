@@ -8,7 +8,7 @@ import com.example.CountingSort.CountingSort;
 import com.example.Efficient.EfficientSort;
 import com.example.InsertionSort.SimpleSort;
 
-// nnnnnnnnnnnnnn
+
 public class Main {
 
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class Main {
                 System.out.println("................................");
                 System.out.println("Please provide the path of the file containing the array to be sorted: ");
                 filePath = sc.nextLine();
-                ReadFile rf2 = new ReadFile(filePath);
+                main.java.com.example.ReadFile rf2 = new main.java.com.example.ReadFile(filePath);
                 try {
                     // read line from txt file
                     array = rf2.read();
