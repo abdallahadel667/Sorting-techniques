@@ -20,7 +20,7 @@ public class SortTest {
      * method to produce a random list of integers randomizing size and elements.
      * max size is 1000 and max element is 10000 "adjutable"
      */
-   public ArrayList<Integer> randomList() {
+    public ArrayList<Integer> randomList() {
         Random random = new Random();
         ArrayList<Integer> list = new ArrayList<>();
         int size = random.nextInt(1000);
@@ -57,7 +57,7 @@ public class SortTest {
     }
 
     @Test // best case insertion sort array sorted
-     public void bestcaseInsertionSortTest() {
+    public void bestcaseInsertionSortTest() {
         SimpleSort sorting = new SimpleSort();
         ArrayList<Integer> list = randomList();
         ArrayList<Integer> expected = sorting.copy(list);
@@ -173,10 +173,9 @@ public class SortTest {
         ArrayList<Integer> list = randomList();
         Collections.sort(list, Collections.reverseOrder());
         Collections.sort(list);
-        ArrayList<Integer> actual = sorting.MergeSort(list,false);
+        ArrayList<Integer> actual = sorting.MergeSort(list, false);
         assertEquals(list, actual);
     }
-
 
     @Test
     @Timeout(value = 1, unit = TimeUnit.MILLISECONDS)
@@ -204,7 +203,6 @@ public class SortTest {
         for (int value : aux) {
             actual.add(value);
         }
-
         assertEquals(expected, actual);
     }
 
