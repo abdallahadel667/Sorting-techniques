@@ -1,4 +1,4 @@
-package com.example;
+package main.java.com.example;
 
 
 import java.io.*;
@@ -24,7 +24,7 @@ public class ReadFile {
 
             // Extract the array content from the line
             String temp = line.split("=")[1].trim(); // Assuming the format is "array = {...}"
-            temp = temp.replaceAll("\\[|\\]|\\{|\\}", ""); // Remove square brackets and curly braces
+            temp = temp.replaceAll("\\[|\\]|\\{|\\}|\\\"", ""); // Remove square brackets and curly braces
             String[] arrayContent = temp.split(", "); // Split the content by comma and space
 
             // Convert string elements to integers and add them to the ArrayList
