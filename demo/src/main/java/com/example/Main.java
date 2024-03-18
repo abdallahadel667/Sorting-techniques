@@ -1,8 +1,12 @@
-import java.util.*;
-import java.io.*;
-import CountingSort.CountingSort;
-import InsertionSort.SimpleSort;
-import Efficient.EfficientSort;
+package com.example;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.example.CountingSort.CountingSort;
+import com.example.Efficient.EfficientSort;
+import com.example.InsertionSort.SimpleSort;
 
 // nnnnnnnnnnnnnn
 public class Main {

@@ -1,4 +1,4 @@
-package InsertionSort;
+package com.example.InsertionSort;
 import java.util.*;
 
 public class SimpleSort {
@@ -38,11 +38,7 @@ public class SimpleSort {
         return list;
     }
 
-    public void printSnapshots() {
-        sort(list);
-        for (ArrayList<Integer> snapshot : snapshots) {
-            System.out.println(snapshot);
-        }
+   
     }
 
     
@@ -50,4 +46,3 @@ public class SimpleSort {
 
     
 
-}

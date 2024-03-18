@@ -1,4 +1,4 @@
-package CountingSort;
+package com.example.CountingSort;
 
 import java.util.ArrayList;
 import java.util.Collections;
