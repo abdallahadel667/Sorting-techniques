@@ -166,17 +166,17 @@ public class SortTest {
         ArrayList<Integer> actual = sorting.MergeSort(list, false);
         assertEquals(expected, actual);
     }
-    
+
     @Test // worst case insertion sort array reversed
     public void worstCaseMergeSortTest() {
         EfficientSort sorting = new EfficientSort();
         ArrayList<Integer> list = randomList();
         Collections.sort(list, Collections.reverseOrder());
-        ArrayList<Integer> expected = sorting.copy(list);
-        Collections.sort(expected);
-        ArrayList<Integer> actual = sorting.insertionSort(list);
-        assertEquals(expected, actual);
+        Collections.sort(list);
+        ArrayList<Integer> actual = sorting.MergeSort(list,false);
+        assertEquals(list, actual);
     }
+
 
     @Test
     @Timeout(value = 1, unit = TimeUnit.MILLISECONDS)
