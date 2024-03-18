@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -204,6 +205,60 @@ public class SortTest {
             actual.add(value);
         }
         assertEquals(expected, actual);
+    }
+    @Test // intermediate array test for insertion sort
+    public void intermediateInsertionSort() throws IOException {
+        ArrayReader cases = new ArrayReader("C:\\Users\\Amir\\OneDrive - Alexandria University\\Desktop\\FOE-AU\\CSED_Y2_2nd Semester\\Data Structures & Algorithms\\Labs\\Final\\Main\\src\\Insertion Sort Intermediate Test.txt");
+        //some parsing to get the expected intermediate arrays
+        ArrayList<ArrayList<Integer>> temp = cases.read();
+        ArrayList<Integer> list = temp.get(0);
+        temp.remove(0);
+        ArrayList<ArrayList<Integer>> expected = new ArrayList<>();
+        for(int i =0 ; i< temp.size()-1; i++){
+            expected.add(temp.get(i));
+        }
+        expected.add(list);
+        SimpleSort sorting = new SimpleSort();
+        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println(Arrays.toString(expected.toArray()));
+
+        //sorting.insertionSort(list);
+        ArrayList<ArrayList<Integer>> actual = sorting.sort(list);//actual ones
+        assertEquals(expected, actual);
+
+    }
+    @Test // intermediate array test for merge sort
+    public void intermediateMergeSort() throws IOException {
+        ArrayReader cases = new ArrayReader("C:\\Users\\Amir\\OneDrive - Alexandria University\\Desktop\\FOE-AU\\CSED_Y2_2nd Semester\\Data Structures & Algorithms\\Labs\\Final\\Main\\src\\Merge Sort Intermediate Test.txt");
+        ArrayList<ArrayList<Integer>> temp = cases.read();
+        ArrayList<Integer> list = temp.get(0);
+        temp.remove(0);
+        ArrayList<ArrayList<Integer>> expected = new ArrayList<>();
+        for(int i =0 ; i< temp.size()-1; i++){
+            expected.add(temp.get(i));
+        }
+        EfficientSort sorting = new EfficientSort();
+
+        sorting.MergeSort(list, true);//actual ones
+        ArrayList<ArrayList<Integer>> actual = sorting.getSnapShots();//actual ones
+        assertEquals(expected, actual);
+
+    }
+    @Test // intermediate array test for count sort
+    public void intermediateCountSort() throws IOException {
+        ArrayReader cases = new ArrayReader("C:\\Users\\bo2dy\\OneDrive\\Documents\\GitHub\\Sorting-techniques\\Main\src\\main\\java\\com\\example\\Count Sort Intermediate Test.txt");
+        ArrayList<ArrayList<Integer>> temp = cases.read();
+        ArrayList<Integer> list = temp.get(0);
+        temp.remove(0);
+        ArrayList<ArrayList<Integer>> expected = new ArrayList<>();
+        for(int i =0 ; i< temp.size(); i++){
+            expected.add(temp.get(i));
+        }
+        CountingSort sorting = new CountingSort(list);
+
+        ArrayList<ArrayList<Integer>> actual = sorting.returnIntermediateArrays();//actual ones
+        assertEquals(expected, actual);
+
     }
 
 }

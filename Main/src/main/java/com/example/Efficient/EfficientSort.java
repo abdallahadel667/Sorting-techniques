@@ -7,6 +7,14 @@ public class EfficientSort {
     //saving snapshots of the array on each iteration
     ArrayList<ArrayList<Integer>> snapShots = new ArrayList<>();
 
+    public ArrayList<ArrayList<Integer>> getSnapShots() {
+        return snapShots;
+    }
+
+    public void setSnapShots(ArrayList<ArrayList<Integer>> snapShots) {
+        this.snapShots = snapShots;
+    }
+
     void printIntermediate(ArrayList<Integer> iteration) {
         System.out.print(Arrays.toString(iteration.toArray()));
     }
@@ -95,6 +103,6 @@ public class EfficientSort {
         return mergeIn;
     }
 
-  
+
 
 }

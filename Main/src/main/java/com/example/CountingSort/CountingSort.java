@@ -7,7 +7,7 @@ public class CountingSort {
     // Declare class variables
     private ArrayList<Integer> list; // Input list to be sorted
     private int size; // Size of the input list
-    private ArrayList<int[]> intermediateArrayList = new ArrayList<>(); // To store intermediate steps during sorting
+    private ArrayList<ArrayList<Integer>> intermediateArrayList = new ArrayList<>(); // To store intermediate steps during sorting
     private int[] finalArray; // To store the final sorted array
 
     // Constructor
@@ -42,7 +42,7 @@ public class CountingSort {
     }
 
     // Method to return intermediate arrays generated during sorting
-    ArrayList<int[]> returnIntermediateArrays() {
+    public ArrayList<ArrayList<Integer>> returnIntermediateArrays() {
         // Perform sorting
         int[] freq_arr = sort();
         int[] ans = new int[size];
@@ -52,7 +52,10 @@ public class CountingSort {
             int value = list.get(i);
             freq_arr[value]--;
             ans[freq_arr[value]] = value;
-            int[] snapShot = ans.clone();
+            ArrayList<Integer> snapShot = new ArrayList<>();
+            for (int j = 0; j < size; j++) {
+                snapShot.add(ans[j]);
+            }
             this.intermediateArrayList.add(snapShot); // Add snapshot to intermediateArrayList
         }
 
@@ -84,16 +87,8 @@ public class CountingSort {
 
         // Print intermediate arrays
         System.out.println("The intermediate steps of the sorting algorithm are: ");
-        for (int[] arr : intermediateArrayList) {
-            System.out.print("[");
-            for (int i = 0; i < size; i++) {
-                System.out.print(arr[i]);
-                if (i != size - 1) {
-                    System.out.print(", ");
-                }
-            }
-            System.out.println("]");
-            
+        for (int i = 0; i < size; i++) {
+            System.out.println(intermediateArrayList.get(i));
         }
     }
 
