@@ -1,6 +1,6 @@
 package com.example;
 import  com.example.CountingSort.CountingSort;
-import  com.example.Efficient.EfficientSort;
+import  com.example.EfficientSort.EfficientSort;
 import  com.example.InsertionSort.SimpleSort;
 import java.io.IOException;
 import java.util.ArrayList;

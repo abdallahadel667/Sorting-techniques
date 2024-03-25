@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.Timeout;
 
 import com.example.CountingSort.CountingSort;
-import com.example.Efficient.EfficientSort;
+import com.example.EfficientSort.EfficientSort;
 import com.example.InsertionSort.SimpleSort;
 
 public class SortTest {
@@ -86,7 +86,7 @@ public class SortTest {
     @Test // custom tests from file
     public void customTest() {
         ReadTestCases cases = new ReadTestCases(
-                "C:\\Users\\bo2dy\\OneDrive\\Documents\\GitHub\\Sorting-techniques\\demo\\src\\main\\java\\com\\example\\test.txt");
+                "testFiles/test.txt");
         ArrayList<Integer> list = new ArrayList<>();
         try {
             list = cases.read().get(0);
@@ -208,7 +208,7 @@ public class SortTest {
     }
     @Test // intermediate array test for insertion sort
     public void intermediateInsertionSort() throws IOException {
-        ArrayReader cases = new ArrayReader("C:\\Users\\Amir\\OneDrive - Alexandria University\\Desktop\\FOE-AU\\CSED_Y2_2nd Semester\\Data Structures & Algorithms\\Labs\\Final\\Main\\src\\Insertion Sort Intermediate Test.txt");
+        ArrayReader cases = new ArrayReader("testFiles/Insertion Sort Intermediate Test.txt");
         //some parsing to get the expected intermediate arrays
         ArrayList<ArrayList<Integer>> temp = cases.read();
         ArrayList<Integer> list = temp.get(0);
@@ -229,7 +229,7 @@ public class SortTest {
     }
     @Test // intermediate array test for merge sort
     public void intermediateMergeSort() throws IOException {
-        ArrayReader cases = new ArrayReader("C:\\Users\\Amir\\OneDrive - Alexandria University\\Desktop\\FOE-AU\\CSED_Y2_2nd Semester\\Data Structures & Algorithms\\Labs\\Final\\Main\\src\\Merge Sort Intermediate Test.txt");
+        ArrayReader cases = new ArrayReader("testFiles/Merge Sort Intermediate Test.txt");
         ArrayList<ArrayList<Integer>> temp = cases.read();
         ArrayList<Integer> list = temp.get(0);
         temp.remove(0);
@@ -246,7 +246,7 @@ public class SortTest {
     }
     @Test // intermediate array test for count sort
     public void intermediateCountSort() throws IOException {
-        ArrayReader cases = new ArrayReader("C:\\Users\\bo2dy\\OneDrive\\Documents\\GitHub\\Sorting-techniques\\Main\src\\main\\java\\com\\example\\Count Sort Intermediate Test.txt");
+        ArrayReader cases = new ArrayReader("testFiles/Count Sort Intermediate Test.txt");
         ArrayList<ArrayList<Integer>> temp = cases.read();
         ArrayList<Integer> list = temp.get(0);
         temp.remove(0);
